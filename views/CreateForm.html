@@ -1,0 +1,89 @@
+<!-- Create a new user form-->
+
+<div class="createAddress">
+    <form name="createForm" novalidate>
+        <input type="text"
+               placeholder="First name *"
+               name="firstName"
+               ng-pattern="/[a-z]+/i"
+               ng-model="contact.firstName"
+               ng-minlength=3
+               ng-maxlength=30
+               ng-click="contact.firstName = null" required/>
+        <div class="errorContainer" ng-show="createForm.firstName.$dirty">
+            <small class="error" ng-show="createForm.firstName.$error.required">Required field!</small>
+            <small class="error" ng-show="createForm.firstName.$error.minlength">
+            First name is required to be at least 3 characters</small>
+            <small class="error" ng-show="createForm.firstName.$error.maxlength">
+                First name cannot be longer than 30 characters</small>
+            <small class="error" ng-show="createForm.firstName.$error.pattern">
+                Field isn't valid</small>
+        </div>
+        <input type="text"
+               placeholder="Last name *"
+               name="lastName"
+               ng-pattern="/[a-z]+/i"
+               ng-model="contact.lastName"
+               ng-minlength=3
+               ng-minlength=30
+               ng-click="contact.lastName = null"
+               required />
+        <div class="errorContainer" ng-show="createForm.lastName.$dirty">
+            <small class="error" ng-show="createForm.lastName.$error.required">Required field!</small>
+            <small class="error" ng-show="createForm.lastName.$error.minlength">
+                Last name is required to be at least 3 characters</small>
+            <small class="error" ng-show="createForm.lastName.$error.maxlength">
+                Last name cannot be longer than 30 characters</small>
+            <small class="error" ng-show="createForm.lastName.$error.pattern">
+                Field isn't valid</small>
+        </div>
+        <input type="email"
+               placeholder="Email *"
+               name="emailField"
+               ng-model="contact.email"
+               ng-maxlength=30
+               ng-click="contact.email = null"
+               required />
+        <div class="errorContainer" ng-show="createForm.emailField.$dirty">
+            <small class="error" ng-show="createForm.emailField.$error.maxlength">
+                Email cannot be longer than 50 characters</small>
+            <small class="error" ng-show="createForm.emailField.$error.required">
+                Required field!</small>
+            <small class="error" ng-show="createForm.emailField.$error.email">
+                Email isn't valid</small>
+        </div>
+        <input type="text"
+               placeholder="Address"
+               name="address"
+               ng-model="contact.address"
+               ng-click="contact.address = null"
+               ng-maxlength=50 />
+        <div class="errorContainer" ng-show="createForm.address.$dirty">
+            <small class="error" ng-show="createForm.address.$error.maxlength">
+                Address cannot be longer than 50 characters</small>
+        </div>
+        <input type="text"
+               placeholder="City"
+               name="cityField"
+               ng-model="contact.city"
+               ng-maxlength=20
+               ng-click="contact.city = null"
+               ng-pattern="/[a-z]+/i" />
+        <div class="errorContainer" ng-show="createForm.cityField.$dirty">
+            <small class="error" ng-show="createForm.cityField.$error.pattern">Field isn't valid</small>
+        </div>
+        <input type="text"
+               placeholder="Zip-code"
+               ng-model="contact.zipcode"
+               ng-click="contact.zipcode = null"
+               ng-maxlength=10 />
+        <input type="text"
+               placeholder="Country"
+               ng-model="contact.country"
+               ng-pattern="/[a-z]+/i"
+               ng-click="contact.country = null"
+               ng-maxlength=20 />
+        <input class="buttons" ng-disabled="createForm.$invalid" ng-click="createContact()" type="button" value="Create"  />
+    </form>
+
+</div>
