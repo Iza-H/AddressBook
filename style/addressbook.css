@@ -15,6 +15,7 @@ h1{
     top:20px;
     height:100%;
     width:100%;
+
 }
 
 .module{
@@ -29,6 +30,7 @@ h1{
     -moz-box-shadow: 0px 0px 15px 0px rgba(0, 0, 0, .45);
     box-shadow:  0px 0px 15px 0px rgba(0, 0, 0, .45);
     border-top: 6px solid #ff656c;
+    margin-bottom: 20px;
 }
 .createAddress{
     position:relative;
@@ -82,6 +84,8 @@ h1{
     margin-bottom: 25px;
 }
 
+
+
 .createAddress input:active, .createAddress input:focus {
     border: 1px solid #ff656c;
 }
@@ -116,4 +120,103 @@ div .error{
     float: right;
     margin-top: -25px;
     color: #ff656c;
+}
+
+/*Search input*/
+.searchInput{
+    width: 200px;
+    height: 20px;
+    font-size: 13px;
+    font-family: 'Roboto', sans-serif;
+    border:0px;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+    outline: none;
+    margin-bottom: 45px;
+    margin-right: 2%;
+    float: right;
+}
+
+
+
+
+/*Table*/
+.rwd-table{
+    width:97%;
+    height:100%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+    min-width: 300px;
+    margin-bottom: 30px;
+
+}
+
+.rwd-table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font: normal 13px Arial, sans-serif;
+}
+.rwd-table thead th {
+    background-color: transparent;
+    border-bottom: solid 2px #ccc;
+    color: #ff656c;
+    padding: 10px;
+    text-align: left;
+
+}
+.rwd-table tbody td {
+    border: solid 1px #ccc;
+    color: #333;
+    padding: 10px;
+    border-left: none;
+    border-right: none;
+}
+
+.listElements input[type=text] {
+    width: 100%;
+    font: normal 13px Arial, sans-serif;
+    border:0px;
+    background-color: #f0f0f0;
+    outline: none;
+}
+
+@media (max-width: 650px) {
+    .rwd-table{
+        width:97%;
+        height:100%;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: left;
+        min-width: 300px;
+        margin-bottom: 30px;
+
+    }
+    .rwd-table, .rwd-table thead, .rwd-table thead tr, .rwd-table thead th, .rwd-table tbody, .rwd-table tbody tr, .rwd-table tbody td {
+        -moz-box-sizing: border-box;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        display: block;
+        width: 100%;
+        text-align: center;
+    }
+    .rwd-table {
+        border-color: #ccc;
+    }
+    .rwd-table thead th {
+        border-color: #ccc;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+    }
+    .rwd-table tbody tr {
+        border-bottom: solid 1px #BBDFDF;
+    }
+    .rwd-table tbody td {
+        border-top: none;
+        border-color: #EEF7F7;
+    }
+    .rwd-table tbody tr:last-child, .zui-table-responsive tbody td:last-child {
+        border-bottom: none;
+    }
 }

@@ -1,9 +1,34 @@
 <!-- Contact presented in the table-->
-<tr>
-    <td>{{::contact.firstName}}</button></td>
-    <td>{{::contact.lastName}}</td>
-    <td>{{::contact.email}}</td>
-    <td>{{::contact.address}}</td>
-    <td>{{::contact.city}}</td>
-    <td>{{::contact.country}}</td>
+
+<tr class="listElements">
+    <td><span ng-if="!contact.$edit">{{::contact.firstName}}</span>
+        <div ng-if="contact.$edit"><input type="text" ng-model="contact.firstName" /></div>
+    </td>
+    <td><span ng-if="!contact.$edit">{{::contact.lastName}}</span>
+        <div ng-if="contact.$edit"><input type="text" ng-model="contact.lastName" /></div>
+    </td>
+    <td><span ng-if="!contact.$edit">{{::contact.email}}</span>
+        <div ng-if="contact.$edit"><input type="text" ng-model="contact.email" /></div>
+    </td>
+    <td><span ng-if="!contact.$edit">{{::contact.address}}</span>
+        <div ng-if="contact.$edit"><input type="text" ng-model="contact.address" /></div>
+    </td>
+    <td><span ng-if="!contact.$edit">{{::contact.city}}</span>
+        <div ng-if="contact.$edit"><input type="text" ng-model="contact.city" /></div>
+    </td>
+    <td><span ng-if="!contact.$edit">{{::contact.zipcode}}</span>
+        <div ng-if="contact.$edit"><input type="text" ng-model="contact.zipcode" /></div>
+    </td>
+    <td><span ng-if="!contact.$edit">{{::contact.country}}</span>
+        <div ng-if="contact.$edit"><input type="text" ng-model="contact.country" /></div>
+    </td>
+    <td>
+        <a ng-if="!contact.$edit" href="" ng-click="contact.$edit = true">Edit</a>
+        <a ng-if="contact.$edit" href="" ng-click="contact.$edit = false; update(contact)">Save</a>
+    </td>
+    <td>
+        <a ng-if="!contact.$edit" href="" ng-click="delete(contact)">Delete</a>
+        <a ng-if="contact.$edit" href="" ng-click="cancel(contact)">Cancel</a>
+    </td>
+
 </tr>
