@@ -5,18 +5,17 @@
     <title>AddressBook</title>
     <link rel="stylesheet" href="style/addressbook.css">
 </head>
+
 <body ng-app="AddressBook">
     <div id="container">
         <header><h1>Address Book</h1></header>
         <div class="module">
 
             <nav class="float-form">
-
                 <ul class="tabs">
                     <!--Menu:-->
                     <li class="tab">
                         <a class="menuAdd" href="#/create"></a>
-
                     </li>
                     <li class="tab">
                         <a class="menuList" href="#/list"></a>
@@ -27,17 +26,10 @@
                 <section ng-view></section>
         </div>
 
-
-        </div>
-
-
     </div>
 
 
-
-
-
-
+    <!--Scripts-->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
     <script src="scripts/app.js"></script>
@@ -53,5 +45,7 @@
     <script src="scripts/services/ListService.js"></script>
     <!--directives-->
     <script src="scripts/directives/ListElement.js"></script>
+
+
 </body>
 </html>
