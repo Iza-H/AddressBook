@@ -40,6 +40,7 @@ h1{
     width:70%;
     margin-left:auto;
     margin-right:auto;
+    margin-top: 30px;
 }
 
 .module ul{
@@ -48,28 +49,7 @@ h1{
     display: inline;
 }
 
-.tab{
-    float:left;
-    height:60px;
-    width:50%;
-    padding-top:20px;
-    box-sizing:border-box;
-    background:#eeeeee;
-    text-align:center;
-    cursor:pointer;
-    margin-bottom: 30px;
-}
 
-.tab:first-child{
-    -webkit-border-radius: 5px 0px 0px 0px;
-    border-radius: 5px 0px 0px 0px;
-}
-
-.tab:last-child{
-    -webkit-border-radius: 0px 5px 0px 0px;
-    -moz-box-radiaus: 0px 5px 0px 0px;
-    border-radius: 0px 5px 0px 0px;
-}
 
 
 .createAddress input[type=text], .createAddress input[type=email]{
@@ -143,6 +123,36 @@ div .error{
     float: right;
 }
 
+
+/*Main buttons*/
+.tab a{
+    display:block;
+    float:right;
+    cursor:pointer;
+    width: 48px;
+    height: 48px;
+    border: none;
+    background-color: transparent;
+    margin-right: 1%;
+    margin-bottom: 10px;
+
+}
+
+.tab .menuList{
+    background:url(../resources/icons/iconmonstr-menu-6-icon-48_light.png) no-repeat;
+}
+
+.tab .menuList:hover{
+    background:url(../resources/icons/iconmonstr-menu-6-icon-48_dark.png) no-repeat;
+}
+
+.tab .menuAdd{
+    background:url(../resources/icons/iconmonstr-plus-5-icon-48_light.png) no-repeat;
+}
+
+.tab .menuAdd:hover{
+    background:url(../resources/icons/iconmonstr-plus-5-icon-48_dark.png) no-repeat;
+}
 
 
 
@@ -221,7 +231,7 @@ div .error{
         border-top: none;
         border-color: #EEF7F7;
     }
-    .rwd-table tbody tr:last-child, .zui-table-responsive tbody td:last-child {
+    .rwd-table tbody tr:last-child {
         border-bottom: none;
     }
 }
