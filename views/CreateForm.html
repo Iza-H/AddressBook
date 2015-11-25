@@ -5,7 +5,7 @@
         <input type="text"
                placeholder="First name *"
                name="firstName"
-               ng-pattern="/[a-z]+/i"
+               ng-pattern="/^[a-z]+$/i"
                ng-model="contact.firstName"
                ng-maxlength=30
                ng-click="contact.firstName = null" required/>
@@ -19,7 +19,7 @@
         <input type="text"
                placeholder="Last name *"
                name="lastName"
-               ng-pattern="/[a-z]+/i"
+               ng-pattern="/^[a-z]+$/i"
                ng-model="contact.lastName"
                ng-maxlength=30
                ng-click="contact.lastName = null"
@@ -62,7 +62,7 @@
                ng-model="contact.city"
                ng-maxlength=20
                ng-click="contact.city = null"
-               ng-pattern="/[a-z]+/i" />
+               ng-pattern="/^[a-z]+$/i" />
         <div class="errorContainer" ng-show="createForm.cityField.$dirty">
             <small class="error" ng-show="createForm.cityField.$error.pattern">Field isn't valid</small>
         </div>
@@ -80,7 +80,7 @@
                placeholder="Country"
                name="countryField"
                ng-model="contact.country"
-               ng-pattern="/[a-z]+/i"
+               ng-pattern="/^[a-z]+$/i"
                ng-click="contact.country = null"
                ng-maxlength=20 />
         <div class="errorContainer" ng-show="createForm.countryField.$dirty">

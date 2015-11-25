@@ -18,8 +18,8 @@
         </tr>
         </thead>
         <tbody>
-        <tr ng-repeat="contact in contacts | orderBy: 'lastName' | filter:search" contact-Element contact="contact" class="listElements">
-        </tr>
+            <tr ng-repeat="contact in contacts | orderBy: 'lastName' | filter:search track by $index" contact-Element contact="contact" class="listElements">
+            </tr>
         </tbody>
     </table>
 

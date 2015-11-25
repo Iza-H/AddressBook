@@ -11,7 +11,7 @@ angular.module("AddressBook").directive("contactElement",['ContactServices', fun
        link:function(scope, el, atrr){
 
            scope.delete = function(value){
-               alert("DELETE");
+               console.log("DELETE contact" + value);
                ContactServices.deleteValueFromStorage(value, el);
                scope.contact.$removed=true;
 
@@ -19,6 +19,7 @@ angular.module("AddressBook").directive("contactElement",['ContactServices', fun
            },
 
             scope.update = function(contact){
+                console.log("SAVE contact" + contact);
                 ContactServices.updateValueInStorage(contact);
             }
 
@@ -31,6 +32,8 @@ angular.module("AddressBook").directive("contactElement",['ContactServices', fun
                 scope.contact.$edit=false;
 
             }
+
+
 
        }
 

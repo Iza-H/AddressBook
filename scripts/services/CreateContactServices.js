@@ -43,7 +43,6 @@ angular.module("AddressBook").service("ContactServices", ['$filter','Properties'
             if (oldValue!==null){
                 localStorage.removeItem(Properties.prefix + $filter('lowercase')(value.email));
                 return {ok:"true", result:"success"};
-                el.remove();
             }
             return {ok:"true", result:"No value in the storage"};
         }
