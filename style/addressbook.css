@@ -1,4 +1,4 @@
-@import url(http://fonts.googleapis.com/css?family=Roboto:100);
+@import url(http://fonts.googleapis.com/css?family=Roboto:300);
 
 body{
 
@@ -15,6 +15,7 @@ h1{
     top:20px;
     height:100%;
     width:100%;
+    min-width: 240px;
 
 }
 
@@ -112,6 +113,11 @@ h1{
     background: #ff4c54;
 }
 
+.buttons:disabled {
+
+}
+
+
 .errorContainer{
     width: 100%;
 }
@@ -155,59 +161,58 @@ div .error{
 .rwd-table {
     border-collapse: collapse;
     border-spacing: 0;
-    font: normal 13px Arial, sans-serif;
+    font: normal 14px 'Roboto', sans-serif;
 }
 .rwd-table thead th {
     background-color: transparent;
     border-bottom: solid 2px #ccc;
+    font-weight: bold;
     color: #ff656c;
     padding: 10px;
     text-align: left;
+    text-transform: uppercase;
 
 }
 .rwd-table tbody td {
     border: solid 1px #ccc;
-    color: #333;
+    color: black;
     padding: 10px;
     border-left: none;
     border-right: none;
 }
 
-.listElements input[type=text] {
+.listElements input[type=text], .listElements input[type=email] {
     width: 100%;
-    font: normal 13px Arial, sans-serif;
+    font: normal 14px 'Roboto', sans-serif;
     border:0px;
     background-color: #f0f0f0;
     outline: none;
 }
 
-@media (max-width: 650px) {
-    .rwd-table{
-        width:97%;
-        height:100%;
-        margin-left: auto;
-        margin-right: auto;
-        text-align: left;
-        min-width: 300px;
-        margin-bottom: 30px;
+@media (max-width: 670px) {
 
-    }
     .rwd-table, .rwd-table thead, .rwd-table thead tr, .rwd-table thead th, .rwd-table tbody, .rwd-table tbody tr, .rwd-table tbody td {
         -moz-box-sizing: border-box;
         -webkit-box-sizing: border-box;
         box-sizing: border-box;
-        display: block;
-        width: 100%;
+        display: inline-block;
+        width:97%;
+        margin-left: auto;
+        margin-right: auto;
         text-align: center;
     }
+
     .rwd-table {
         border-color: #ccc;
     }
+
     .rwd-table thead th {
-        border-color: #ccc;
-        border-top: none;
-        border-left: none;
-        border-right: none;
+        border:none;
+    }
+    .rwd-table thead th:last-child{
+        border-bottom: 2px solid #ccc;
+        height: 0px;
+
     }
     .rwd-table tbody tr {
         border-bottom: solid 1px #BBDFDF;

@@ -6,11 +6,22 @@ angular.module("AddressBook").controller("CreateContactCtrl",['$scope', 'Contact
     $scope.contact = {};
 
 
-    $scope.createContact= function(){
+    $scope.createContact= function(form){
         if (ContactServices.getValueFromStorage($scope.contact.email)===null){
-            ContactServices.saveValueInStorage ($scope.contact);
+            var result = ContactServices.saveValueInStorage ($scope.contact);
+            if (result.ok ==='true'){
+                alert("saved correctly");
+
+                //clear form:
+                $scope.contact=null;
+
+                //clear errors from form:
+                form.$setPristine();
+            }
+
         }else{
-            alert("YA tengo");
+            alert("Cantact with this email alread exists");
+
         }
     };
 

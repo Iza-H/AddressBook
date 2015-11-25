@@ -12,6 +12,7 @@ addressBook.config(['$routeProvider', function($routeProvider, ListServices){
             controller: 'ListCtrl',
             resolve: {
                 Contacts : ['ListServices', function(ListServices){
+                    debugger;
                     return ListServices.getContacts();
                 }]
 

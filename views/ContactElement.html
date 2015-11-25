@@ -1,34 +1,40 @@
 <!-- Contact presented in the table-->
 
-<tr class="listElements">
-    <td><span ng-if="!contact.$edit">{{::contact.firstName}}</span>
-        <div ng-if="contact.$edit"><input type="text" ng-model="contact.firstName" /></div>
-    </td>
-    <td><span ng-if="!contact.$edit">{{::contact.lastName}}</span>
-        <div ng-if="contact.$edit"><input type="text" ng-model="contact.lastName" /></div>
-    </td>
-    <td><span ng-if="!contact.$edit">{{::contact.email}}</span>
-        <div ng-if="contact.$edit"><input type="text" ng-model="contact.email" /></div>
-    </td>
-    <td><span ng-if="!contact.$edit">{{::contact.address}}</span>
-        <div ng-if="contact.$edit"><input type="text" ng-model="contact.address" /></div>
-    </td>
-    <td><span ng-if="!contact.$edit">{{::contact.city}}</span>
-        <div ng-if="contact.$edit"><input type="text" ng-model="contact.city" /></div>
-    </td>
-    <td><span ng-if="!contact.$edit">{{::contact.zipcode}}</span>
-        <div ng-if="contact.$edit"><input type="text" ng-model="contact.zipcode" /></div>
-    </td>
-    <td><span ng-if="!contact.$edit">{{::contact.country}}</span>
-        <div ng-if="contact.$edit"><input type="text" ng-model="contact.country" /></div>
-    </td>
-    <td>
-        <a ng-if="!contact.$edit" href="" ng-click="contact.$edit = true">Edit</a>
-        <a ng-if="contact.$edit" href="" ng-click="contact.$edit = false; update(contact)">Save</a>
-    </td>
-    <td>
-        <a ng-if="!contact.$edit" href="" ng-click="delete(contact)">Delete</a>
-        <a ng-if="contact.$edit" href="" ng-click="cancel(contact)">Cancel</a>
-    </td>
+<tr class="listElements" >
+    <form name="createForm" novalidate >
+        <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.firstName}}</span>
+            <div ng-if="contact.$edit"><input type="text" name="firstName" ng-model="contact.firstName" ng-pattern="/[a-z]+/i" required /></div>
+            {{createForm.firstName.$valid}}
+        </td>
+        <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.lastName}}</span>
+            <div ng-if="contact.$edit"><input type="text" ng-model="contact.lastName" ng-pattern="/[a-z]+/i" required /></div>
+            {{createForm.lastName.$valid}}
+        </td>
+        <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.email}}</span>
+            <div ng-if="contact.$edit"><input type="email" ng-model="contact.email" required /></div>
+        </td>
+        <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.address}}</span>
+            <div ng-if="contact.$edit"><input type="text" ng-model="contact.address" /></div>
+        </td>
+        <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.city}}</span>
+            <div ng-if="contact.$edit"><input type="text" ng-model="contact.city" ng-pattern="/[a-z]+/i" /></div>
+        </td>
+        <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.zipcode}}</span>
+            <div ng-if="contact.$edit"><input type="text" ng-model="contact.zipcode" ng-pattern="/^\d{5}$/" /></div>
+        </td>
+        <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.country}}</span>
+            <div ng-if="contact.$edit"><input type="text" ng-model="contact.country" ng-pattern="/[a-z]+/i" /></div>
+        </td>
+        <td ng-if="!contact.$removed">
+            <a ng-if="!contact.$edit" href="" ng-click="contact.$edit = true; edit(contact)">Edit</a>
+            <a ng-if="contact.$edit" href="" ng-disabled="createForm.$invalid" ng-click="contact.$edit = false; update(contact)">Save</a>
+        </td>
+        <td ng-if="!contact.$removed">
+            <a ng-if="!contact.$edit" href="" ng-click="delete(contact)">Delete</a>
+            <a ng-if="contact.$edit" href="" ng-click="cancel()">Cancel</a>
+        </td>
+
+
+
 
 </tr>

@@ -7,7 +7,7 @@ angular.module("AddressBook").service("ContactServices", ['$filter','Properties'
 
     this.getValueFromStorage = function(value){
         if (typeof (Storage)!=='undefined'){
-            return localStorage.getItem(Properties.prefix + $filter('lowercase')(value));
+            return  localStorage.getItem(Properties.prefix + $filter('lowercase')(value));
         }else{
             return {ok:"error", result:"StorageUndifined"}
         }
@@ -16,9 +16,10 @@ angular.module("AddressBook").service("ContactServices", ['$filter','Properties'
     this.saveValueInStorage = function(value){
         if (typeof (Storage)!=='undefined'){
             //set values in the localStorege, in a lowercase way:
-            return localStorage.setItem(Properties.prefix + $filter('lowercase')(value.email), JSON.stringify(value));
+            localStorage.setItem(Properties.prefix + $filter('lowercase')(value.email), JSON.stringify(value));
+            return {ok:"true", result:"Values saved correctly"};
         }else{
-            return {ok:"error", result:"StorageUndifined"}
+            return {ok:"error", result:"Storage Undifined"};
         }
     }
 
@@ -31,21 +32,22 @@ angular.module("AddressBook").service("ContactServices", ['$filter','Properties'
             }
             return localStorage.setItem(Properties.prefix + $filter('lowercase')(value.email), JSON.stringify(value));
         }else{
-            return {ok:"error", result:"StorageUndifined"}
+            return {ok:"error", result:"Storage Undifined"};
         }
     }
 
-    this.deleteValueFromStorage = function(value){
+    this.deleteValueFromStorage = function(value, el){
         if (typeof (Storage)!=='undefined'){
             //set values in the localStorege, in a lowercase way:
             var oldValue = localStorage.getItem(Properties.prefix + $filter('lowercase')(value.email));
             if (oldValue!==null){
                 localStorage.removeItem(Properties.prefix + $filter('lowercase')(value.email));
-                return {ok:"true", result:"success"}
+                return {ok:"true", result:"success"};
+                el.remove();
             }
-            return {ok:"true", result:"noValueInStorage"}
+            return {ok:"true", result:"No value in the storage"};
         }
-        return {ok:"error", result:"StorageUndifined"}
+        return {ok:"error", result:"Storage Undifined"};
     }
 
 

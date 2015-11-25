@@ -21,7 +21,7 @@
                name="lastName"
                ng-pattern="/[a-z]+/i"
                ng-model="contact.lastName"
-               ng-minlength=30
+               ng-maxlength=30
                ng-click="contact.lastName = null"
                required />
         <div class="errorContainer" ng-show="createForm.lastName.$dirty">
@@ -72,11 +72,9 @@
                ng-model="contact.zipcode"
                ng-pattern="/^\d{5}$/"
                ng-click="contact.zipcode = null"
-               ng-maxlength=10 />
+               ng-maxlength=5 />
         <div class="errorContainer" ng-show="createForm.zipCodeField.$dirty">
-            <small class="error" ng-show="createForm.zipCodeField.$error.pattern">Field isn't valid</small>
-            <small class="error" ng-show="createForm.zipCodeField.$error.maxlength">
-                Zip-code cannot be longer than 10 characters</small>
+            <small class="error" ng-show="createForm.zipCodeField.$error.pattern">Field isn't valid, required length is 5 </small>
         </div>
         <input type="text"
                placeholder="Country"
@@ -90,7 +88,7 @@
             <small class="error" ng-show="createForm.countryField.$error.maxlength">
                 Country cannot be longer than 20 characters</small>
         </div>
-        <input class="buttons" ng-disabled="createForm.$invalid" ng-click="createContact()" type="button" value="Create"  />
+        <input class="buttons" ng-disabled="createForm.$invalid" ng-click="createContact(createForm)" type="button" value="Create"  />
     </form>
 
 </div>
