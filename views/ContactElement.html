@@ -13,8 +13,9 @@
                                ng-model="contact.firstName"
                                ng-maxlength=30
                                required
-                               ng-keyup="contact.$correctFN = fnForm.firstName.$valid"/>
-                    </form><p ng-if="contact.$correctFN!=null && !contact.$correctFN"  class="errorChar">!</p>
+                               ng-keyup="contact.$correctFN = fnForm.firstName.$valid" />
+                        <div ng-if="contact.$correctFN!=null && !contact.$correctFN"  class="errorChar">!</div>
+                    </form>
                  </div>
             <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.lastName}}</span>
                 <div ng-if="contact.$edit">
@@ -26,7 +27,7 @@
                                ng-maxlength=30
                                required
                                ng-keyup="contact.$correctLN = editForm.lastName.$valid"/>
-                    </form><p ng-if="contact.$correctLN!=null && !contact.$correctLN"  class="errorChar">!</p>
+                    </form><div ng-if="contact.$correctLN!=null && !contact.$correctLN"  class="errorChar">*</div>
                 </div>
 
             </td>
@@ -39,7 +40,7 @@
                                ng-maxlength=30
                                required
                                ng-keyup="contact.$correctEmail = editForm.emailField.$valid"/>
-                    </form><p ng-if="contact.$correctEmail!=null && !contact.$correctEmail" class="errorChar">!</p>
+                    </form><div ng-if="contact.$correctEmail!=null && !contact.$correctEmail" class="errorChar">*</div>
                 </div>
             </td>
             <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.address}}</span>
@@ -47,7 +48,7 @@
                     <form name="editForm" novalidate>
                         <input type="text" name="address" ng-model="contact.address" ng-maxlength=50
                                ng-keyup="contact.$correctAddress = editForm.address.$valid"/>
-                    </form><p ng-if="contact.$correctAddress!=null && !contact.$correctAddress"  class="errorChar">!</p>
+                    </form><div ng-if="contact.$correctAddress!=null && !contact.$correctAddress"  class="errorChar">*</div>
                 </div>
             </td>
             <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.city}}</span>
@@ -55,7 +56,7 @@
                     <form name="editForm" novalidate>
                         <input type="text" ng-model="contact.city" name="cityField" ng-pattern="/^[a-z]+$/i"
                                ng-keyup="contact.$correctCity = editForm.cityField.$valid" />
-                    </form><p ng-if="contact.$correctCity!=null && !contact.$correctCity"  class="errorChar">!</p>
+                    </form><div ng-if="contact.$correctCity!=null && !contact.$correctCity"  class="errorChar">*</div>
                 </div>
             </td>
             <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.zipcode}}</span>
@@ -67,7 +68,7 @@
                                ng-pattern="/^\d{5}$/"
                                ng-maxlength=5
                                ng-keyup="contact.$correctZipCode = editForm.zipCodeField.$valid"/>
-                    </form><p ng-if="contact.$correctZipCode!=null && !contact.$correctZipCode"  class="errorChar">!</p>
+                    </form><div ng-if="contact.$correctZipCode!=null && !contact.$correctZipCode"  class="errorChar">*</div>
                 </div>
             </td>
             <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.country}}</span>
@@ -79,7 +80,7 @@
                                ng-pattern="/^[a-z]+$/i"
                                ng-maxlength=20
                                ng-keyup="contact.$correctCountry = editForm.countryField.$valid"/>
-                    </form><p ng-if="contact.$correctCountry!=null && !contact.$correctCountry"  class="errorChar">!</p>
+                    </form><div ng-if="contact.$correctCountry!=null && !contact.$correctCountry"  class="errorChar">*</div>
                 </div>
             </td>
             <td ng-if="!contact.$removed">

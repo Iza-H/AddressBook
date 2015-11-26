@@ -16,7 +16,7 @@ h1{
     height:100%;
     min-height: 500px;
     width:100%;
-    min-width: 240px;
+    min-width: 300px;
 
 }
 
@@ -50,9 +50,7 @@ h1{
     display: inline;
 }
 
-.errorChar{
-    color: #ff656c;
-}
+
 
 
 .createAddress input[type=text], .createAddress input[type=email]{
@@ -96,8 +94,14 @@ h1{
     background: #ff4c54;
 }
 
-.buttons:disabled {
+.buttons:disabled:hover {
+    background: #ff656c;
+    cursor: default;
+}
 
+.buttons:enabled:hover {
+    background: #ff4c54;
+    cursor: pointer;
 }
 
 
@@ -112,19 +116,19 @@ div .error{
 }
 
 /*Search input*/
-.searchInput{
+/*.searchInput{
     width: 200px;
     height: 20px;
     font-size: 13px;
     font-family: 'Roboto', sans-serif;
     border:0px;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #ff656c;
     text-align: center;
     outline: none;
-    margin-bottom: 45px;
-    margin-right: 2%;
     float: right;
-}
+    margin: 0px 10px 50px 0px;
+    background-color: transparent;
+}*/
 
 
 /*Main buttons*/
@@ -137,7 +141,7 @@ div .error{
     border: none;
     background-color: transparent;
     margin-right: 1%;
-    margin-bottom: 10px;
+    /*margin-bottom: 10px;*/
 
 }
 
@@ -163,11 +167,10 @@ div .error{
 .rwd-table{
     width:97%;
     height:100%;
-    margin-left: auto;
+    margin:50px auto 30px auto;
     margin-right: auto;
     text-align: left;
     min-width: 300px;
-    margin-bottom: 30px;
 
 }
 
@@ -177,6 +180,7 @@ div .error{
     font: normal 14px 'Roboto', sans-serif;
 }
 .rwd-table thead th {
+    width: 14%;
     background-color: transparent;
     border-bottom: solid 2px #ccc;
     font-weight: bold;
@@ -195,11 +199,23 @@ div .error{
 }
 
 .listElements input[type=text], .listElements input[type=email] {
-    width: 100%;
     font: normal 14px 'Roboto', sans-serif;
     border:0px;
-    background-color: #f0f0f0;
+    background-color: #f9f9f9;
+    background-size: contain;
+    width: 89%;
     outline: none;
+    float:left;
+}
+
+.listContainer{
+    padding: 1px;
+}
+
+.errorChar{
+    color: #ff656c;
+    padding-left: 1px;
+    float: left;
 }
 
 @media (max-width: 670px) {
@@ -238,7 +254,8 @@ div .error{
         border-bottom: none;
     }
 
-    .listElements input[type=text], .listElements input[type=text]{
+    .listElements input[type=text], .listElements input[type=email]{
         text-align: center;
+        width: 90%;
     }
 }

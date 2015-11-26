@@ -20,7 +20,7 @@ angular.module("AddressBook").controller("CreateContactCtrl",['$scope', 'Contact
             }
 
         }else{
-            alert("Cantact with this email alread exists");
+            alert("Cantact with this email already exists");
 
         }
     };
