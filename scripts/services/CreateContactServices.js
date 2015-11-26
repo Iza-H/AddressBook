@@ -9,7 +9,7 @@ angular.module("AddressBook").service("ContactServices", ['$filter','Properties'
         if (typeof (Storage)!=='undefined'){
             return  localStorage.getItem(Properties.prefix + $filter('lowercase')(value));
         }else{
-            return {ok:"error", result:"StorageUndifined"}
+            return {ok:"error", result:"Storage Undifined"}
         }
     }
 

@@ -22,7 +22,7 @@ The application consists of two prates:
 
 Change between them can be done using buttons located at the right top of the page.
 
-!(https://github.com/Iza-H/AddressBook/blob/master/resources/icons/screenshots/buttones.png “List and Create button”)
+!(https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/buttones.png “List and Create button”)
 
 
 **Add a new contact**
@@ -39,11 +39,11 @@ This part allows to add new contact, using the form which has below fields:
 
 Button *Create* which allows add a new value is enabled only in the case when all fields are valid. In other case there is no possibility to click on it.
 
-!(https://github.com/Iza-H/AddressBook/blob/master/resources/icons/screenshots/emptyNew.png “New empty form”)
+!(https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/emptyNew.png “New empty form”)
 
 The application can't permit to save some contact if there already exists a contact with the same *Email* in storage. Email has to be unique. This value is using to save contact in the Local Storage.
 
-!(https://github.com/Iza-H/AddressBook/blob/master/resources/icons/screenshots/creation.png “Create process”)
+!(https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/creation.png “Create process”)
 
 All data is saved in the Local Storage using format *key-value*. Where the key concisit of the prefix of the application ("AB_") and an email. On the other hand - value is the object with all information about the contact saved as a String.
 
@@ -53,7 +53,7 @@ All data is saved in the Local Storage using format *key-value*. Where the key c
 
 This part presents all contacts in the table.
 
-!(https://github.com/Iza-H/AddressBook/blob/master/resources/icons/screenshots/listContacts.png “List with contacts”)
+!(https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/listContacts.png “List with contacts”)
 
 The data is divided into columns:
 
@@ -73,7 +73,7 @@ At the end of every row there are also located two buttons, which give a user ad
 
 After selecting this value - all cells of the row become editable. There are valid all the validations like during the normal process of the creation of the contact. So if some field isn't valid the *Save* button isn't available. The user also has an option to cancel the changes done by him using the button *Cancel*.
 
-!(https://github.com/Iza-H/AddressBook/blob/master/resources/icons/screenshots/editableList.png “Editable row”)
+!(https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/editableList.png “Editable row”)
 
 * Delete button
 
