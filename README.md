@@ -15,19 +15,19 @@ The api provides:
 * possibility to change the values.
 
 ##Architecture:
-The application consists of two prates:
+The application consists of two partes:
 
 * first which allows to show all contacts.
-* second which serves to add new contacts.
+* second which is used to add new contacts.
 
-Change between them can be done using buttons located at the right top of the page.
+The change between them can be done using buttons located at the right top part of the page.
 
 ![](https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/buttones.png)
 
 
 **Add a new contact**
 
-This part allows to add new contact, using the form which has below fields:
+This part allows to add a new contact, using the form which has below fields:
 
 * Fast Name - *Mandatory, String, max-length 30 characters, permits only letters*
 * Last Name - *Mandatory, String, max-length 30 characters, permits only letters, rows are sorted by this field*
