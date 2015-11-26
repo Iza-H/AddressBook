@@ -41,11 +41,11 @@ Button *Create* which allows add a new value is enabled only in the case when al
 
 ![](https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/emptyNew.png)
 
-The application can't permit to save some contact if there already exists a contact with the same *Email* in storage. Email has to be unique. This value is using to save contact in the Local Storage.
+The application can't permit to save some contact if there already exists a contact with the same *Email* in storage. Email value has to be unique. This value is using to save a contact in the Local Storage.
 
 ![](https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/creation.png)
 
-All data is saved in the Local Storage using format *key-value*. Where the key concisit of the prefix of the application ("AB_") and an email. On the other hand - value is the object with all information about the contact saved as a String.
+All data is saved in the Local Storage using format *key-value*. Where the key consisits of the prefix of the application ("AB_") and an email. On the other hand - value is the object with all information about the contact saved as a String.
 
 
 
@@ -65,19 +65,19 @@ The data is divided into columns:
 * Zip-Code
 * Country
 
-Values are loaded from the Local Storage. The api looks for all keys which have at he beginning of the key the "AB_" prefix.
+Values are loaded from the Local Storage. The api looks for all keys which have at the beginning of the key the "AB_" prefix and presents them respectively in the table.
 
-At the end of every row there are also located two buttons, which give a user additional possibilities:
+At the end of every row there are also located two buttons, which give the user additional possibilities:
 
 * Edit button to update the data,
 
-After selecting this value - all cells of the row become editable. There are valid all the validations like during the normal process of the creation of the contact. So if some field isn't valid the *Save* button isn't available. The user also has an option to cancel the changes done by him using the button *Cancel*.
+After selecting this value - all cells of the row become editable. There are valid all the validations like during the normal process of the creation of the contact. So if some field isn't valid - the *Save* button isn't available. The user also has an option to cancel the changes done by him using the button *Cancel*.
 
 ![](https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/editableList.png)
 
 * Delete button
 
-Using this option the api removes the value from the Storage and do update of the table.
+Using this option the api removes the value from the Storage and does the update of the table.
 
 ##Technical structure
 The api was written using AngularJS (1.4.7), JavaScript, HTML5 and CSS3.
@@ -89,10 +89,10 @@ The project contains:
 * views/ - folder with all views used in the api
 * scripts/constants - js file with properties
 * scripts/controlles - all controllers
-* scripts/directives - directive that is used to the creation of the rows of the  table
-* services/services - with backend for the controllers
+* scripts/directives - directive that is used to the creation of the rows of the table
+* services/services - file with backend for the controllers
 * style/ - folder with a css file
-* resources/ - with all additional files likes icons
+* resources/ -  all additional files likes icons
 
 ##Future
-The next step in the development of this api will be - change all popups using actually (from the standard alerts) to more elegant popups which allow to lead more advanced interactions with user (like asking if he really wants to delete some contact etc). For this purpose will be used ngDialog library.
+The next step in the development of this api will be change all popups that are used actually (the standard alerts) to more elegant popups which allow to lead more advanced interactions with user (like asking if the user really wants to delete some contact etc). For this purpose will be used ngDialog library.
