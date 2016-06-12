@@ -1,15 +1,17 @@
-/**
- * Created by izabela on 12/06/16.
- */
+//Second verison of use provider:
 
-
-describe('Testing ListCtrl Controller', function() {
+describe('Testing ListCtrl Controller - second version [using $provide]', function() {
     var ctrl, scope;
     beforeEach(module('AddressBook'));
 
-    beforeEach(inject(function($controller, $rootScope){
+    beforeEach(module(function($provide) {
+        var values = [{"name":"TestName"}];
+        $provide.value('Contacts',values);
+    }));
+
+    beforeEach(inject(function($controller, $rootScope, _Contacts_){
         scope = $rootScope.$new();
-        var contacts = [{"name":"TestName"}];
+        var contacts = _Contacts_;
         ctrl = $controller('ListCtrl', {$scope : scope, Contacts: contacts });
     }));
 
@@ -25,5 +27,3 @@ describe('Testing ListCtrl Controller', function() {
 
 
 });
-
-
