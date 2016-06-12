@@ -1,4 +1,7 @@
-#Address Book - AngularJS Project [Angular, Angular-Route, Karma, Jasmine, ESLint]
+#Address Book - AngularJS Project
+
+
+[Angular, Angular-Route, Karma, Jasmine, ESLint]
 
 
 
