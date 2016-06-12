@@ -1,7 +1,7 @@
 /**
  * Created by izabela on 23/11/15.
  */
-var addressBook = angular.module("AddressBook", ['ngRoute']);
+var addressBook = angular.module('AddressBook', ['ngRoute']);
 
 
 addressBook.config(['$routeProvider', function($routeProvider, ListServices){
