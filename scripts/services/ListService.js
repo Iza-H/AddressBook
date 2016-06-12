@@ -1,9 +1,9 @@
 /**
  * Created by izabela on 24/11/15.
  */
-"use strict";
+'use strict';
 
-angular.module("AddressBook").service("ListServices", function(Properties){
+angular.module('AddressBook').service('ListServices', function(Properties){
 
     this.getContacts = function(){
         if (typeof (Storage)!=='undefined'){
@@ -21,8 +21,8 @@ angular.module("AddressBook").service("ListServices", function(Properties){
             //localStorage.clear();
             return contacts;
         }else{
-            console.log("Local Storage undefined");
+            console.log('Local Storage undefined');
             return null;
         }
-    }
+    };
 });

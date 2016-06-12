@@ -1,4 +1,4 @@
-#Address Book - AngularJS Project
+#Address Book - AngularJS Project [Angular, Angular-Route, Karma, Jasmine, ESLint]
 
 
 
@@ -80,7 +80,7 @@ After selecting this value - all cells of the row become editable. There are val
 Using this option the api removes the value from the Storage and do update of the table.
 
 ##Technical structure
-The api was written using AngularJS (1.4.7), JavaScript, HTML5 and CSS3.
+The api was written using AngularJS (1.4.7), JavaScript, HTML5 and CSS3. It uses ESLite to clean the code.
 
 The project contains:
 
@@ -93,6 +93,21 @@ The project contains:
 * services/services - with backend for the controllers
 * style/ - folder with a css file
 * resources/ - with all additional files likes icons
+* tests - dir with tests TDD
+
+
+
+##Tests
+
+In order to do test TDD of the app will be used Karma and Jasmine. To run them will be used:
+
+* npm test
+
+or
+
+* karma start karma.conf.js
+
+
 
 ##Future
 The next step in the development of this api will be - change all popups using actually (from the standard alerts) to more elegant popups which allow to lead more advanced interactions with user (like asking if he really wants to delete some contact etc). For this purpose will be used ngDialog library.

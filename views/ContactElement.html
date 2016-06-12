@@ -17,6 +17,7 @@
                         <div ng-if="contact.$correctFN!=null && !contact.$correctFN"  class="errorChar">!</div>
                     </form>
                  </div>
+            </td>
             <td ng-if="!contact.$removed"><span ng-if="!contact.$edit">{{::contact.lastName}}</span>
                 <div ng-if="contact.$edit">
                     <form name="editForm" novalidate>

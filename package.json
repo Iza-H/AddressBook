@@ -1,0 +1,28 @@
+{
+  "name": "adressbook",
+  "version": "1.0.0",
+  "description": "adressBook",
+  "devDependencies": {
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.7",
+    "eslint": "^2.12.0"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js",
+    "eslint": "node_modules/eslint/bin/eslint.js scripts/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Iza-H/AddressBook.git"
+  },
+  "author": "iza-h",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Iza-H/AddressBook/issues"
+  },
+  "homepage": "https://github.com/Iza-H/AddressBook#readme"
+}
