@@ -9,7 +9,7 @@ describe('Testing ListCtrl Controller', function() {
 
     beforeEach(inject(function($controller, $rootScope){
         scope = $rootScope.$new();
-        var contacts = [{"name":"TestName"}];
+        var contacts = [{'name':'TestName'}];
         ctrl = $controller('ListCtrl', {$scope : scope, Contacts: contacts });
     }));
 

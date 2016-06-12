@@ -1,11 +1,11 @@
-//Second verison of use provider:
+//Second version that presents different way of injection:
 
 describe('Testing ListCtrl Controller - second version [using $provide]', function() {
     var ctrl, scope;
     beforeEach(module('AddressBook'));
 
     beforeEach(module(function($provide) {
-        var values = [{"name":"TestName"}];
+        var values = [{'name':'TestName'}];
         $provide.value('Contacts',values);
     }));
 
