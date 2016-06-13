@@ -52,6 +52,7 @@ describe('Testing CreateContactCtrl Controller', function(){
 
     });
 
+
    it ('should return an alert with a massage that the contact was saved correctly after receiving ok:true', function(){
         scope.contact.email=null;
         spyOn(window, 'alert');

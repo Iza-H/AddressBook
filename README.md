@@ -15,13 +15,14 @@ The api provides:
 
 * possibility of presentation of user contacts;
 * ability to add new contacts;
-* possibility to change the values.
+* possibility of changing the values.
+* possibility of deleting of contacts
 
 ##Architecture:
-The application consists of two partes:
+The application consists of two parts:
 
-* first which allows to show all contacts.
-* second which is used to add new contacts.
+* first one which allows to show all contacts.
+* second one which is used to add new contacts.
 
 The change between them can be done using buttons located at the right top part of the page.
 
@@ -40,15 +41,15 @@ This part allows to add a new contact, using the form which has below fields:
 * Zip-Code - *Optional, Number, length - 5 digits*
 * Country - *Optional, String, max-length 20 charactacters, permits only letters*
 
-Button *Create* which allows add a new value is enabled only in the case when all fields are valid. In other case there is no possibility to click on it.
+Button *Create* which allows add a new value, is enabled only in the case when all fields are valid. In other case there is no possibility of clicking it.
 
 ![](https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/emptyNew.png)
 
-The application can't permit to save some contact if there already exists a contact with the same *Email* in storage. Email value has to be unique. This value is using to save a contact in the Local Storage.
+The application doesn't permit to save some contact if there already exists a contact with the same *Email* in storage. Email value has to be unique. This value is using to save a contact in the Local Storage.
 
 ![](https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/creation.png)
 
-All data is saved in the Local Storage using format *key-value*. Where the key consisits of the prefix of the application ("AB_") and an email. On the other hand - value is the object with all information about the contact saved as a String.
+All data is saved in the Local Storage using format *key-value* (where the key consisits of the prefix of the application ("AB_") and an email). On the other hand - value is the object with all information about the contact saved as a String.
 
 
 
@@ -58,7 +59,7 @@ This part presents all contacts in the table.
 
 ![](https://github.com/Iza-H/AddressBook/blob/master/resources/screenshots/listContacts.png)
 
-The data is divided into columns:
+The data is divided into seven columns:
 
 * Fast Name
 * Last Name
@@ -68,9 +69,9 @@ The data is divided into columns:
 * Zip-Code
 * Country
 
-Values are loaded from the Local Storage. The api looks for all keys which have at the beginning of the key the "AB_" prefix and presents them respectively in the table.
+Values are loaded from the Local Storage. The api looks for all keys which have at the beginning the "AB_" prefix and it presents them respectively in the table.
 
-At the end of every row there are also located two buttons, which give the user additional possibilities:
+At the end of every row there are located two buttons, which give the user additional possibilities:
 
 * Edit button to update the data,
 
@@ -102,7 +103,7 @@ The project contains:
 
 ##Tests
 
-In order to do test TDD of the app will be used Karma and Jasmine. To run them will be used:
+To do the test TDD of the app is used Karma and Jasmine. To run them should be used:
 
 * npm test
 
