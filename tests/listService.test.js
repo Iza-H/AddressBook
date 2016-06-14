@@ -4,7 +4,7 @@
 'use strict';
 
 describe('Testing ListService service', function(){
-    var Properties, ListServices;
+    var ListServices;
     var store = {};
 
     beforeEach(module('AddressBook'));
@@ -23,6 +23,16 @@ describe('Testing ListService service', function(){
         spyOn(localStorage, 'clear').and.callFake(function() {
             store = {};
         });
+        spyOn(localStorage, 'key').and.callFake(function(index) {
+            return Object.keys(store)[index];
+        });
+
+        /*Object.defineProperty(localStorage, 'length', {
+            configurable: true//,
+            //get: function () { return Object.keys(this).length; },
+
+        });*/
+
 
 
 
@@ -49,11 +59,10 @@ describe('Testing ListService service', function(){
         localStorage.setItem("CC_2", '{"name": "item_with_incorrect_prefix"}');
         var result = ListServices.getContacts();
         expect(result.length).toBe(2);
-        expect(result[0].name).toBe("item_correct_2");
-        expect(result[1].name).toBe("item_correct_1");
+        expect(result[0].name).toBe("item_correct_1");
+        expect(result[1].name).toBe("item_correct_2");
         expect(result[1].name).not.toBe("item_with_incorrect_prefix");
         expect(result[0].name).not.toBe("item_with_incorrect_prefix");
-
 
     });
 
